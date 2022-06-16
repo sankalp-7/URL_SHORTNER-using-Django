@@ -1,0 +1,54 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+    <!-- CSS only -->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HOME</title>
+    <style>
+        body{
+            background-color: #7f5a83;
+background-image: linear-gradient(285deg, #7f5a83 0%, #0d324d 74%);
+
+
+
+        }
+        .card{
+            top:15%;
+            left:50%;
+            transform: translate(-50%,50%);
+            position: absolute;
+            width: 40%;
+            height: 40%;
+            align-items: center;
+            background-color: #b1bfd8;
+background-image: linear-gradient(315deg, #b1bfd8 0%, #6782b4 74%);
+            backdrop-filter: blur(20px);
+            border: 0;
+            box-shadow: 0px 4px 8px 0px rgba(0,0,0,0.2);
+        }
+        .btn{
+            width: 300px;
+        }
+    </style>
+</head>
+<body>
+    <h2 style="text-align:center; color:white;">URL SHORTNER</h2>
+    <form method="post">
+        {% csrf_token %}
+        <div class="card">
+            <div class="mb-3">
+                <label for="url" class="form-label" style="margin-top: 20px;">Enter URL:</label>
+                <input type="text" class="form-control" id="url" name="url" style="width: 300px;">
+              </div>
+              <a href=""><button type="submit" class="btn btn-primary" style="margin-top: 50px;">Submit</button></a>
+        </div>
+      </form>
+      <h4 style="text-align: center; color: #f7e4f9;">{{url}}</h4>
+    
+</body>
+</html>
